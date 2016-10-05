@@ -8,7 +8,22 @@ import {
 } from 'react-native';
 let Weather = React.createClass({
   render: function() {
-    return <MapView style={ styles.map }></MapView>
+    let pins = [{
+      latitude: 25.057975, 
+      longitude: 121.544356
+    }];
+
+    return (
+      <MapView 
+        annotations={ pins }
+        style={ styles.map }
+        onRegionChangeComplete={ this.onRegionChangeComplete }
+        >
+      </MapView>
+    )
+  },
+  onRegionChangeComplete: function(region) {
+    console.log(region);
   }
 });
 
