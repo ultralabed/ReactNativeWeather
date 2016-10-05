@@ -1,3 +1,4 @@
+let _ = require('lodash');
 const key = `b12830e84c9325c4cf7c59dfea2627ab`
 const rootUrl = `http://api.openweathermap.org/data/2.5/weather?APPID=${key}`; 
 
@@ -13,7 +14,7 @@ module.exports = function(latitude, longitude) {
     return {
       city: json.name,
       temperature: kelvinToC(json.main.temp),
-      description: json.weather[0].description
+      description: _.capitalize(json.weather[0].description)
     };
   });
 }
