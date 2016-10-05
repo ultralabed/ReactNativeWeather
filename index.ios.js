@@ -6,6 +6,7 @@ import {
   View,
   MapView
 } from 'react-native';
+
 let Weather = React.createClass({
   getInitialState: function() {
     return {
